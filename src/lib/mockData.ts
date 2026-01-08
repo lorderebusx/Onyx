@@ -124,7 +124,7 @@ export const bankAccounts = [
     id: 1, 
     name: "Chase Checking", 
     type: "Cash & Checking", 
-    balance: "$462,451.90", 
+    balance: "$162,451.90", 
     // Uses Chase's official domain logo
     logoUrl: getLogo("chase.com")
   },
@@ -138,11 +138,11 @@ export const bankAccounts = [
   },
   { 
     id: 3, 
-    name: "BoA Savings", 
-    type: "Savings (4.5% APY)", 
-    balance: "$145,208.88", 
+    name: "Axos HY Savings", 
+    type: "Savings (4.21% APY)", 
+    balance: "$445,208.88", 
     // Marcus by Goldman Sachs
-    logoUrl: getLogo("bankofamerica.com/") 
+    logoUrl: getLogo("axosbank.com/") 
   },
   { 
     id: 4, 
@@ -152,3 +152,87 @@ export const bankAccounts = [
     logoUrl: getLogo("coinbase.com") 
   },
 ];
+
+export const allTransactions = [
+  {
+    id: 1,
+    merchant: "Spotify",
+    date: "Jan 7, 2026",
+    amount: "-$14.99",
+    status: "Completed",
+    category: "Subscription",
+    method: "Chase Sapphire",
+    logo: getLogo("spotify.com")
+  },
+  {
+    id: 2,
+    merchant: "Uber Eats",
+    date: "Jan 6, 2026",
+    amount: "-$32.50",
+    status: "Completed",
+    category: "Food",
+    method: "Amex Gold",
+    logo: getLogo("ubereats.com")
+  },
+  {
+    id: 3,
+    merchant: "Upwork Inc",
+    date: "Jan 5, 2026",
+    amount: "+$1,450.00",
+    status: "Completed",
+    category: "Income",
+    method: "BoA Checking",
+    logo: getLogo("upwork.com")
+  },
+  {
+    id: 4,
+    merchant: "Steam Games",
+    date: "Jan 4, 2026",
+    amount: "-$59.99",
+    status: "Pending",
+    category: "Entertainment",
+    method: "Chase Sapphire",
+    logo: getLogo("steampowered.com")
+  },
+  {
+    id: 5,
+    merchant: "Whole Foods",
+    date: "Jan 2, 2026",
+    amount: "-$142.80",
+    status: "Completed",
+    category: "Groceries",
+    method: "Amex Gold",
+    logo: getLogo("wholefoodsmarket.com")
+  },
+  {
+    id: 6,
+    merchant: "Netflix",
+    date: "Jan 1, 2026",
+    amount: "-$19.99",
+    status: "Completed",
+    category: "Subscription",
+    method: "Chase Sapphire",
+    logo: getLogo("netflix.com")
+  },
+  {
+    id: 7,
+    merchant: "Apple Store",
+    date: "Dec 28, 2025",
+    amount: "-$1,299.00",
+    status: "Completed",
+    category: "Tech",
+    method: "Amex Platinum",
+    logo: getLogo("apple.com")
+  },
+  {
+    id: 8,
+    merchant: "Shell Station",
+    date: "Dec 26, 2025",
+    amount: "-$45.00",
+    status: "Completed",
+    category: "Transport",
+    method: "Chase Sapphire",
+    logo: getLogo("shell.com")
+  },
+];
+
