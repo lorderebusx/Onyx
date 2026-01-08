@@ -26,7 +26,7 @@ export function OverviewChart() {
             contentStyle={{ background: "#27272a", border: "1px solid #3f3f46", color: "#fff", borderRadius: "8px" }}
             itemStyle={{ color: "#e4e4e7" }}
             // This formats the number to currency (USD)
-            formatter={(value: number) => [
+            formatter={(value: any) => [
                 new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(value),
                 // We don't need to change the name, so we leave it undefined to use the default
             ]}
