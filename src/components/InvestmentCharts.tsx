@@ -82,7 +82,7 @@ export function InvestmentsChart() {
                  cursor={{ stroke: color, strokeWidth: 1, strokeDasharray: "4 4" }}
                  contentStyle={{ background: "#27272a", border: "1px solid #3f3f46", color: "#fff", borderRadius: "8px" }}
                  itemStyle={{ color: "#e4e4e7" }}
-                 formatter={(value: number) => [
+                 formatter={(value: any) => [
                    new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(value),
                    "Value"
                  ]}

@@ -22,7 +22,7 @@ export function CategoryPieChart() {
         </Pie>
         <Tooltip 
              contentStyle={{ background: "#27272a", border: "1px solid #3f3f46", color: "#fff", borderRadius: "8px" }}
-             formatter={(value: number) => `$${value}`}
+             formatter={(value: any) => `$${value}`}
         />
       </PieChart>
     </ResponsiveContainer>
