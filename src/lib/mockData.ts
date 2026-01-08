@@ -236,3 +236,116 @@ export const allTransactions = [
   },
 ];
 
+export const investments = [
+  {
+    id: 1,
+    name: "Apple Inc.",
+    ticker: "AAPL",
+    price: "$185.92",
+    change: "+1.2%",
+    holdings: "45.0",
+    value: "$8,366.40",
+    logo: getLogo("apple.com"),
+    trend: "up"
+  },
+  {
+    id: 2,
+    name: "Bitcoin",
+    ticker: "BTC",
+    price: "$46,250.00",
+    change: "-2.4%",
+    holdings: "0.45",
+    value: "$20,812.50",
+    logo: getLogo("bitcoin.org"),
+    trend: "down"
+  },
+  {
+    id: 3,
+    name: "NVIDIA Corp",
+    ticker: "NVDA",
+    price: "$540.20",
+    change: "+4.5%",
+    holdings: "12.0",
+    value: "$6,482.40",
+    logo: getLogo("nvidia.com"),
+    trend: "up"
+  },
+  {
+    id: 4,
+    name: "Ethereum",
+    ticker: "ETH",
+    price: "$2,450.00",
+    change: "+0.8%",
+    holdings: "5.5",
+    value: "$13,475.00",
+    logo: getLogo("ethereum.org"),
+    trend: "up"
+  },
+  {
+    id: 5,
+    name: "Tesla, Inc.",
+    ticker: "TSLA",
+    price: "$235.40",
+    change: "-1.1%",
+    holdings: "20.0",
+    value: "$4,708.00",
+    logo: getLogo("tesla.com"),
+    trend: "down"
+  },
+  {
+    id: 6,
+    name: "Vanguard S&P 500",
+    ticker: "VOO",
+    price: "$475.10",
+    change: "+0.2%",
+    holdings: "35.0",
+    value: "$16,628.50",
+    logo: getLogo("vanguard.com"),
+    trend: "up"
+  }
+];
+
+// src/lib/mockData.ts
+
+export const portfolioHistory = [
+  { month: "Jul", value: 54000 },
+  { month: "Aug", value: 58500 },
+  { month: "Sep", value: 57200 }, // slight dip
+  { month: "Oct", value: 62400 },
+  { month: "Nov", value: 68900 },
+  { month: "Dec", value: 70472 },
+];
+
+export const cryptoHistory = [
+  { month: "Jul", value: 14000 },
+  { month: "Aug", value: 12500 }, // dip
+  { month: "Sep", value: 16800 }, // pump
+  { month: "Oct", value: 15200 },
+  { month: "Nov", value: 18400 },
+  { month: "Dec", value: 20812 },
+];
+
+// src/lib/mockData.ts
+
+export const yearlyAnalytics = [
+  { month: "Jan", income: 4500, expense: 3200 },
+  { month: "Feb", income: 5200, expense: 4800 },
+  { month: "Mar", income: 4800, expense: 4100 },
+  { month: "Apr", income: 6100, expense: 3500 },
+  { month: "May", income: 5900, expense: 5200 },
+  { month: "Jun", income: 7200, expense: 4500 },
+  { month: "Jul", income: 6800, expense: 3800 },
+  { month: "Aug", income: 7400, expense: 5100 },
+  { month: "Sep", income: 7100, expense: 4200 },
+  { month: "Oct", income: 8200, expense: 4800 },
+  { month: "Nov", income: 7900, expense: 5600 },
+  { month: "Dec", income: 9200, expense: 6100 },
+];
+
+export const categoryBreakdown = [
+  { name: "Housing", value: 1800, color: "#3b82f6" }, // Blue
+  { name: "Food", value: 650, color: "#10b981" },    // Emerald
+  { name: "Transport", value: 450, color: "#f59e0b" }, // Amber
+  { name: "Utilities", value: 250, color: "#6366f1" }, // Indigo
+  { name: "Entertainment", value: 350, color: "#ec4899" }, // Pink
+];
