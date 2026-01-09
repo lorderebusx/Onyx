@@ -68,56 +68,55 @@ export const overviewChartData = [
   { name: "Jan", income: 4200, expense: 1200 }, // Fresh start
 ];
 
-// src/lib/mockData.ts
+const getLogo = (domain: string) => 
+  `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
 
 export const myCards = [
   {
-    id: 1,
+    id: 10,
     bank: "American Express",
     network: "Amex",
     balance: "$4,253.68",
     number: "**** ****** 84005", // Amex has 15 digits usually
     expiry: "12/28",
-    // Gunmetal Silver gradient
+    logoUrl: "/american-express.png",
     color: "from-zinc-300 via-zinc-400 to-zinc-500 border-zinc-400", 
     textColor: "text-zinc-900"
   },
   {
-    id: 2,
+    id: 11,
     bank: "Chase Sapphire",
     network: "Visa Infinite",
     balance: "$1,890.50",
     number: "**** **** **** 4242",
     expiry: "09/29",
-    // Deep Blue gradient
+    logoUrl: getLogo("chase.com"),
     color: "from-blue-900 via-blue-950 to-black border-blue-900", 
     textColor: "text-white"
   },
   {
-    id: 3,
+    id: 12,
     bank: "Apple Card",
     network: "Mastercard",
     balance: "$142.20",
     number: "**** **** **** 1290",
     expiry: "**/**",
+    logoUrl: "/Apple-Logo-500x281.png",
     color: "from-zinc-50 via-zinc-100 to-zinc-200 border-zinc-200", 
     textColor: "text-zinc-800"
   },
   {
-    id: 4,
+    id: 13,
     bank: "American Express",
     network: "Amex",
     balance: "$850.00",
     number: "**** ****** 71002",
     expiry: "07/27",
-    // Gold gradient
+    logoUrl: "/american-express.png",
     color: "from-yellow-200 via-yellow-400 to-yellow-600 border-yellow-400", 
     textColor: "text-yellow-950"
   }
 ];
-
-const getLogo = (domain: string) => 
-  `https://www.google.com/s2/favicons?domain=${domain}&sz=128`;
 
 export const bankAccounts = [
   { 
@@ -125,33 +124,70 @@ export const bankAccounts = [
     name: "Chase Checking", 
     type: "Cash & Checking", 
     balance: "$162,451.90", 
-    // Uses Chase's official domain logo
-    logoUrl: getLogo("chase.com")
+    logoUrl: getLogo("chase.com"),
+    accountNumber: "****4590",
+    routing: "****0210",
+    status: "Active",
+    monthlyFee: "$0.00"
   },
   { 
     id: 2, 
     name: "BoA Checking", 
     type: "Cash & Checking", 
     balance: "$94,332.71", 
-    // Uses Chase's official domain logo
-    logoUrl: getLogo("bankofamerica.com")
+    logoUrl: getLogo("bankofamerica.com"),
+    accountNumber: "****8411",
+    routing: "****9874",
+    status: "Active",
+    monthlyFee: "$0.00"
   },
   { 
     id: 3, 
     name: "Axos HY Savings", 
     type: "Savings (4.21% APY)", 
-    balance: "$445,208.88", 
-    // Marcus by Goldman Sachs
-    logoUrl: getLogo("axosbank.com/") 
+    balance: "$446,169.48", 
+    logoUrl: getLogo("axosbank.com/"),
+    accountNumber: "****1151",
+    routing: "****+4545",
+    status: "Active",
+    interestEarned: "+$56,169.48$"
   },
   { 
     id: 4, 
     name: "Coinbase Wallet", 
     type: "Crypto", 
     balance: "$18,450.20", 
-    logoUrl: getLogo("coinbase.com") 
+    logoUrl: getLogo("coinbase.com") ,
+    accountNumber: "0x71C...9A2",
+    routing: "N/A",
+    status: "Active",
+    network: "Ethereum Mainnet"
   },
 ];
+
+export function getAccountById(id: number) {
+  // First, try to find it in bank accounts
+  const bank = bankAccounts.find(acc => acc.id === id);
+  if (bank) return bank;
+
+  // If not found, try to find it in credit cards
+  // We adapt the card data structure to match the "Account" shape expected by the page
+  const card = myCards.find(c => c.id === id);
+  if (card) {
+    return {
+      id: card.id,
+      name: card.bank,         // Map 'bank' to 'name'
+      type: `${card.network} Credit`, // Create a type string
+      balance: card.balance,
+      logoUrl: card.logoUrl,     // Use the card image as the "logo"
+      accountNumber: card.number,
+      routing: "N/A",
+      status: "Active"
+    };
+  }
+  
+  return undefined;
+}
 
 export const allTransactions = [
   {
@@ -324,8 +360,6 @@ export const cryptoHistory = [
   { month: "Nov", value: 18400 },
   { month: "Dec", value: 20812 },
 ];
-
-// src/lib/mockData.ts
 
 export const yearlyAnalytics = [
   { month: "Jan", income: 4500, expense: 3200 },
