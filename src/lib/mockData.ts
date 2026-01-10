@@ -192,56 +192,84 @@ export function getAccountById(id: number) {
 export const allTransactions = [
   {
     id: 1,
+    accountId: 11,
     merchant: "Spotify",
     date: "Jan 7, 2026",
-    amount: "-$14.99",
-    status: "Completed",
+    amount: "-$11.99",
+    status: "Pending",
     category: "Subscription",
     method: "Chase Sapphire",
     logo: getLogo("spotify.com")
   },
   {
     id: 2,
+    accountId: 12,
+    merchant: "Apple One",
+    date: "Jan 4, 2026",
+    amount: "-$19.95",
+    status: "Completed",
+    category: "Subscription",
+    method: "Apple Card",
+    logo: getLogo("apple.com")
+  },
+  {
+    id: 3,
+    accountId: 13,
     merchant: "Uber Eats",
-    date: "Jan 6, 2026",
-    amount: "-$32.50",
+    date: "Jan 2, 2026",
+    amount: "-$52.50",
     status: "Completed",
     category: "Food",
     method: "Amex Gold",
     logo: getLogo("ubereats.com")
   },
   {
-    id: 3,
-    merchant: "Upwork Inc",
-    date: "Jan 5, 2026",
-    amount: "+$1,450.00",
+    id: 4,
+    accountId: 3,
+    merchant: "Direct Deposit",
+    date: "Jan 3, 2026",
+    amount: "+$5,000.00",
     status: "Completed",
-    category: "Income",
-    method: "BoA Checking",
-    logo: getLogo("upwork.com")
+    category: "Savings Deposit",
+    method: "Axos HY Savings",
+    logo: getLogo("axosbank.com")
   },
   {
-    id: 4,
+    id: 5,
+    accountId: 1,
+    merchant: "ACH Credit",
+    date: "Jan 2, 2026",
+    amount: "+$52,450.00",
+    status: "Completed",
+    category: "Income",
+    method: "Chase Checking",
+    logo: getLogo("chase.com")
+  },
+  {
+    id: 6,
+    accountId: 10,
     merchant: "Steam Games",
-    date: "Jan 4, 2026",
+    date: "Jan 3, 2026",
     amount: "-$59.99",
-    status: "Pending",
+    status: "Completed",
     category: "Entertainment",
     method: "Chase Sapphire",
     logo: getLogo("steampowered.com")
   },
   {
-    id: 5,
+    id: 7,
+    accountId: 10,
     merchant: "Whole Foods",
     date: "Jan 2, 2026",
-    amount: "-$142.80",
+    amount: "-$442.80",
     status: "Completed",
     category: "Groceries",
-    method: "Amex Gold",
+    method: "Amex Platinum",
     logo: getLogo("wholefoodsmarket.com")
   },
   {
-    id: 6,
+    id: 8,
+    accountId: 11,
     merchant: "Netflix",
     date: "Jan 1, 2026",
     amount: "-$19.99",
@@ -251,25 +279,49 @@ export const allTransactions = [
     logo: getLogo("netflix.com")
   },
   {
-    id: 7,
+    id: 9,
+    accountId: 12,
     merchant: "Apple Store",
     date: "Dec 28, 2025",
     amount: "-$1,299.00",
     status: "Completed",
     category: "Tech",
-    method: "Amex Platinum",
+    method: "Apple Card",
     logo: getLogo("apple.com")
   },
   {
-    id: 8,
+    id: 10,
+    accountId: 10,
     merchant: "Shell Station",
     date: "Dec 26, 2025",
-    amount: "-$45.00",
+    amount: "-$55.00",
     status: "Completed",
     category: "Transport",
-    method: "Chase Sapphire",
+    method: "Amex Platinum",
     logo: getLogo("shell.com")
   },
+  {
+    id: 11,
+    accountId: 13,
+    merchant: "Amazon",
+    date: "Dec 24, 2025",
+    amount: "-$725.00",
+    status: "Completed",
+    category: "Shopping",
+    method: "Amex Gold",
+    logo: getLogo("amazon.com")
+  },
+  {
+    id: 12,
+    accountId: 13,
+    merchant: "The Ranch",
+    date: "Dec 23, 2025",
+    amount: "-$72.50",
+    status: "Completed",
+    category: "Food",
+    method: "Amex Gold",
+    logo: getLogo("https://theranchlc.com")
+  }
 ];
 
 export const investments = [
