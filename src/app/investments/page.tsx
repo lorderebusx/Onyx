@@ -23,10 +23,9 @@ export default function InvestmentsPage() {
           <p className="text-zinc-500">Real-time market data and holdings.</p>
         </div>
       </div>
-
-      {/* 2. Portfolio Stats Row */}
+      
       <div className="grid gap-4 md:grid-cols-3">
-        {/* Total Value */}
+        
         <Card className="bg-zinc-900 text-white border-zinc-800">
            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-zinc-400">Total Balance</CardTitle>
@@ -39,8 +38,7 @@ export default function InvestmentsPage() {
             </p>
           </CardContent>
         </Card>
-
-        {/* Top Performer */}
+        
         <Card className="bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800">
            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-zinc-500">Top Performer</CardTitle>
@@ -53,8 +51,7 @@ export default function InvestmentsPage() {
             </p>
           </CardContent>
         </Card>
-
-        {/* Worst Performer */}
+        
         <Card className="bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800">
            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium text-zinc-500">Worst Performer</CardTitle>
@@ -72,21 +69,18 @@ export default function InvestmentsPage() {
       <InvestmentsChart />
       
       <div className="grid gap-4 md:grid-cols-2">
-        
-        {/* Card 1: Brokerage Split */}
         <Card className="bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800">
           <CardHeader>
             <CardTitle className="text-sm font-medium text-zinc-500">Brokerage Allocation</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {/* Visual Bar */}
+              
               <div className="flex h-4 w-full overflow-hidden rounded-full">
                 <div className="w-[56.3%] bg-zinc-900 dark:bg-zinc-100" /> {/* Vanguard */}
                 <div className="w-[43.7%] bg-zinc-400 dark:bg-zinc-600" /> {/* Robinhood */}
               </div>
               
-              {/* Legend / Details */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
                    <div className="flex items-center gap-2 mb-1">
@@ -116,16 +110,15 @@ export default function InvestmentsPage() {
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
-              {/* Visual Bar - Tricolor */}
+              
               <div className="flex h-4 w-full overflow-hidden rounded-full">
                 <div className="w-[66.5%] bg-orange-500" /> {/* Ledger */}
                 <div className="w-[29.8%] bg-blue-600" />   {/* Coinbase */}
                 <div className="w-[3.7%] bg-purple-500" /> {/* Metamask */}
               </div>
 
-              {/* Legend Grid */}
               <div className="space-y-3">
-                 {/* Row 1 */}
+                
                  <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                        <div className="h-2 w-2 rounded-full bg-orange-500" />
@@ -133,7 +126,7 @@ export default function InvestmentsPage() {
                     </div>
                     <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100">$180,945.04</span>
                  </div>
-                 {/* Row 2 */}
+                 
                  <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                        <div className="h-2 w-2 rounded-full bg-blue-600" />
@@ -141,7 +134,7 @@ export default function InvestmentsPage() {
                     </div>
                     <span className="text-sm font-bold text-zinc-900 dark:text-zinc-100">$81,002.45</span>
                  </div>
-                 {/* Row 3 */}
+
                  <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                        <div className="h-2 w-2 rounded-full bg-purple-500" />
@@ -154,6 +147,17 @@ export default function InvestmentsPage() {
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      <div className="space-y-1 mt-8">
+        <h3 className="text-xl font-semibold text-zinc-900 dark:text-white">Active Holdings</h3>
+        <p className="text-sm text-zinc-500">
+          Live market data for your stock and crypto positions.
+        </p>
+      </div>
+
+      <div className="space-y-1 mt-8">
+        <h4 className="text-lg font-regular text-zinc-500 dark:text-white">Stocks and MTFs</h4>
       </div>
 
       {/* 3. Asset Table */}
@@ -174,10 +178,9 @@ export default function InvestmentsPage() {
                 key={asset.id} 
                 className="border-b border-zinc-50 dark:border-white/5 hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors group"
               >
-                {/* Asset Name & Ticker */}
                 <TableCell className="font-medium">
                    <div className="flex items-center gap-3">
-                      <div className="h-8 w-8 rounded-full bg-white border border-zinc-200 dark:border-zinc-800 p-1 flex items-center justify-center">
+                      <div className="h-8 w-8 rounded-full bg-white ring-1 ring-zinc-200 dark:ring-zinc-800 p-1 flex items-center justify-center">
                         <img src={asset.logo} alt={asset.name} className="w-full h-full object-contain" />
                       </div>
                       <div>
@@ -187,12 +190,10 @@ export default function InvestmentsPage() {
                    </div>
                 </TableCell>
 
-                {/* Price */}
                 <TableCell className="text-right text-sm font-medium text-zinc-700 dark:text-zinc-300">
                     {asset.price}
                 </TableCell>
 
-                {/* 24h Change (Green/Red) */}
                 <TableCell className="text-right">
                     <div className={cn(
                         "inline-flex items-center px-2 py-0.5 rounded text-xs font-medium",
@@ -204,12 +205,10 @@ export default function InvestmentsPage() {
                     </div>
                 </TableCell>
 
-                {/* Holdings (Qty) */}
                 <TableCell className="text-right text-sm text-zinc-500">
                     {asset.holdings} <span className="text-[10px] uppercase ml-0.5">{asset.ticker}</span>
                 </TableCell>
 
-                {/* Total Value */}
                 <TableCell className="text-right font-medium text-zinc-900 dark:text-zinc-100">
                     {asset.value}
                 </TableCell>
@@ -217,6 +216,10 @@ export default function InvestmentsPage() {
             ))}
           </TableBody>
         </Table>
+      </div>
+
+      <div className="space-y-1 mt-8">
+        <h4 className="text-lg font-regular text-zinc-500 dark:text-white">Crypto</h4>
       </div>
     
       {/* 4. Crypto Table */}
@@ -237,10 +240,9 @@ export default function InvestmentsPage() {
                 key={asset.id} 
                 className="border-b border-zinc-50 dark:border-white/5 hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors group"
               >
-                {/* Asset Name & Ticker */}
                 <TableCell className="font-medium">
                    <div className="flex items-center gap-3">
-                      <div className="h-8 w-8 rounded-full bg-white border border-zinc-200 dark:border-zinc-800 p-1 flex items-center justify-center">
+                      <div className="h-8 w-8 rounded-full bg-white ring-1 ring-zinc-200 dark:ring-zinc-800 p-1 flex items-center justify-center">
                         <img src={asset.logo} alt={asset.name} className="w-full h-full object-contain" />
                       </div>
                       <div>
@@ -250,12 +252,10 @@ export default function InvestmentsPage() {
                    </div>
                 </TableCell>
 
-                {/* Price */}
                 <TableCell className="text-right text-sm font-medium text-zinc-700 dark:text-zinc-300">
                     {asset.price}
                 </TableCell>
 
-                {/* 24h Change (Green/Red) */}
                 <TableCell className="text-right">
                     <div className={cn(
                         "inline-flex items-center px-2 py-0.5 rounded text-xs font-medium",
@@ -267,12 +267,10 @@ export default function InvestmentsPage() {
                     </div>
                 </TableCell>
 
-                {/* Holdings (Qty) */}
                 <TableCell className="text-right text-sm text-zinc-500">
                     {asset.holdings} <span className="text-[10px] uppercase ml-0.5">{asset.ticker}</span>
                 </TableCell>
 
-                {/* Total Value */}
                 <TableCell className="text-right font-medium text-zinc-900 dark:text-zinc-100">
                     {asset.value}
                 </TableCell>

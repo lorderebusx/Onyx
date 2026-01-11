@@ -3,6 +3,12 @@
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis, CartesianGrid } from "recharts";
 import { yearlyAnalytics } from "@/lib/mockData";
 
+const formatCurrency = (value: number) => {
+  if (value >= 1000000) return `$${(value / 1000000).toFixed(1)}M`;
+  if (value >= 1000) return `$${(value / 1000).toFixed(0)}k`;
+  return `$${value}`;
+};
+
 export function CashFlowChart() {
   return (
     <ResponsiveContainer width="100%" height={350}>
@@ -31,10 +37,14 @@ export function CashFlowChart() {
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `$${value}`}
+          tickFormatter={formatCurrency}
+          width={60}
         />
         <Tooltip 
-           contentStyle={{ background: "#27272a", border: "1px solid #3f3f46", color: "#fff", borderRadius: "8px" }}
+          contentStyle={{ background: "#27272a", border: "1px solid #3f3f46", color: "#fff", borderRadius: "8px" }}
+          formatter={(value: any) => [
+            new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(value),
+          ]}
         />
         <Area 
           type="monotone" 

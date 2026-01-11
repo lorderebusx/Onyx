@@ -37,7 +37,6 @@ export default function SettingsPage() {
         <Card className="bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800">
           <CardContent className="p-6 space-y-6">
             
-            {/* Avatar Row */}
             <div className="flex items-center gap-6">
                <Avatar className="h-20 w-20">
                   <AvatarImage src="https://github.com/shadcn.png" />
@@ -51,7 +50,6 @@ export default function SettingsPage() {
 
             <Separator className="bg-zinc-100 dark:bg-zinc-800" />
 
-            {/* Inputs Grid */}
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
                 <Label htmlFor="name">Display Name</Label>

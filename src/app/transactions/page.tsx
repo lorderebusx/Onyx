@@ -30,7 +30,7 @@ export default function TransactionsPage() {
         </div>
       </div>
 
-      {/* 2. Toolbar (Search + Filter) */}
+      {/* 2. Toolbar*/}
       <div className="flex items-center justify-between gap-4 bg-white dark:bg-zinc-900 p-4 rounded-lg border border-zinc-200 dark:border-zinc-800">
          <div className="relative w-full max-w-sm">
             <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-zinc-500" />
@@ -48,7 +48,7 @@ export default function TransactionsPage() {
       <div className="rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 overflow-hidden">
         <Table>
   <TableHeader>
-    {/* Header: Very faint bottom border */}
+    
     <TableRow className="border-b border-zinc-100 dark:border-white/10 hover:bg-transparent">
       <TableHead className="w-[300px] text-zinc-500 dark:text-zinc-400">Merchant</TableHead>
       <TableHead className="text-zinc-500 dark:text-zinc-400">Category</TableHead>
@@ -61,15 +61,12 @@ export default function TransactionsPage() {
     {allTransactions.map((tx) => (
       <TableRow 
         key={tx.id} 
-        // THE FIX: "dark:border-white/5" makes the line 95% transparent. 
-        // "dark:hover:bg-white/5" makes the hover subtle.
         className="border-b border-zinc-50 dark:border-white/5 hover:bg-zinc-50 dark:hover:bg-white/5 transition-colors group"
       >
         
-        {/* Merchant Column */}
         <TableCell className="font-medium">
            <div className="flex items-center gap-3">
-              {/* Added group-hover effect to logo border */}
+            
               <div className="h-8 w-8 rounded-full bg-transparent border border-zinc-200 dark:border-zinc-800 group-hover:border-zinc-600 transition-colors flex items-center justify-center overflow-hidden p-1">
                 <img src={tx.logo} alt={tx.merchant} className="w-full h-full object-contain" />
               </div>
@@ -79,19 +76,17 @@ export default function TransactionsPage() {
               </div>
            </div>
         </TableCell>
-
-        {/* Category Column - Simplified style */}
+        
         <TableCell>
           <div className="text-xs font-medium text-zinc-500 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-800/50 px-2 py-1 rounded-md inline-block">
             {tx.category}
           </div>
         </TableCell>
-
-        {/* Status Column */}
+        
         <TableCell>
            <Badge variant="outline" 
                   className={cn(
-                    "rounded-md border-0 px-2 py-0.5 font-normal text-xs", // Removed border, flattened look
+                    "rounded-md border-0 px-2 py-0.5 font-normal text-xs",
                     tx.status === "Completed" 
                       ? "bg-emerald-500/10 text-emerald-500" 
                       : "bg-zinc-100 text-zinc-500 dark:bg-white/10 dark:text-zinc-400"
@@ -99,11 +94,9 @@ export default function TransactionsPage() {
               {tx.status}
            </Badge>
         </TableCell>
-
-        {/* Date Column */}
+        
         <TableCell className="text-zinc-500 text-xs">{tx.date}</TableCell>
-
-        {/* Amount Column */}
+        
         <TableCell className={cn(
           "text-right font-medium text-sm",
           tx.amount.startsWith("+") ? "text-emerald-500" : "text-zinc-900 dark:text-zinc-100"

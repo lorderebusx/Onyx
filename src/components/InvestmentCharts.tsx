@@ -7,12 +7,16 @@ import { Button } from "@/components/ui/button";
 import { portfolioHistory, cryptoHistory } from "@/lib/mockData";
 import { cn } from "@/lib/utils";
 
+const formatCurrency = (value: number) => {
+  if (value >= 1000000) return `$${(value / 1000000).toFixed(1)}M`;
+  if (value >= 1000) return `$${(value / 1000).toFixed(0)}k`;
+  return `$${value}`;
+};
+
 export function InvestmentsChart() {
   const [activeTab, setActiveTab] = useState<"total" | "crypto">("total");
-
-  // Choose data based on state
   const currentData = activeTab === "total" ? portfolioHistory : cryptoHistory;
-  const color = activeTab === "total" ? "#10b981" : "#8b5cf6"; // Emerald vs Purple
+  const color = activeTab === "total" ? "#10b981" : "#8b5cf6"; 
 
   return (
     <Card className="bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800">
@@ -22,11 +26,10 @@ export function InvestmentsChart() {
             Performance History
           </CardTitle>
           <p className="text-sm text-zinc-500">
-            {activeTab === "total" ? "Combined portfolio growth" : "Crypto assets volatility"}
+            {activeTab === "total" ? "Stocks and investments growth" : "Crypto assets volatility"}
           </p>
         </div>
         
-        {/* The Toggle Buttons */}
         <div className="flex items-center gap-1 bg-zinc-100 dark:bg-zinc-800 p-1 rounded-md">
            <button
              onClick={() => setActiveTab("total")}
@@ -76,14 +79,15 @@ export function InvestmentsChart() {
                 fontSize={12}
                 tickLine={false}
                 axisLine={false}
-                tickFormatter={(value) => `$${value / 1000}k`}
+                tickFormatter={formatCurrency}
+                width={60}
               />
               <Tooltip 
                  cursor={{ stroke: color, strokeWidth: 1, strokeDasharray: "4 4" }}
                  contentStyle={{ background: "#27272a", border: "1px solid #3f3f46", color: "#fff", borderRadius: "8px" }}
                  itemStyle={{ color: "#e4e4e7" }}
                  formatter={(value: any) => [
-                   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(value),
+                   new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0}).format(value),
                    "Value"
                  ]}
               />

@@ -17,8 +17,7 @@ const menuItems = [
 export function Sidebar() {
   const pathname = usePathname();
 
-  return (
-    // CHANGED: Removed opacity, now using solid bg-white/bg-zinc-950
+  return (    
     <div className="h-screen w-64 border-r border-zinc-200 bg-white dark:bg-zinc-950 dark:border-zinc-800 hidden md:flex flex-col sticky top-0">
       
       {/* Header */}
@@ -40,8 +39,8 @@ export function Sidebar() {
                 className={cn(
                   "flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors",
                   isActive 
-                    ? "bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900" // Active: High Contrast
-                    : "text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-50" // Inactive
+                    ? "bg-zinc-900 text-zinc-50 dark:bg-zinc-50 dark:text-zinc-900" 
+                    : "text-zinc-500 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-50" 
                 )}
               >
                 <Icon className="h-4 w-4" />

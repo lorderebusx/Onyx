@@ -26,14 +26,13 @@ export default function WalletPage() {
           <Link key={card.id} href={`/wallet/${card.id}`}>
             <CreditCard 
               key={card.id}
-              {...card} // Pass all properties (bank, color, etc.)
+              {...card} 
             />
           </Link>
         ))}
       </div>
 
       {/* Bank Accounts Section */}
-      
         <div className="mt-8">
           <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-4">Linked Accounts</h3>
           <Card className="bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800">
@@ -43,7 +42,6 @@ export default function WalletPage() {
                   <Link key={account.id} href={`/wallet/${account.id}`} className="block">
                     <div key={account.id} className="flex items-center p-6 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors">
                       
-                      {/* Bank Logo Placeholder */}
                       <div className="h-10 w-10 rounded-full bg-white p-1 flex items-center justify-center border border-zinc-200 dark:border-zinc-700 overflow-hidden">
                         <img 
                           src={account.logoUrl} 
@@ -51,19 +49,16 @@ export default function WalletPage() {
                           className="h-full w-full object-contain" 
                         />
                       </div>
-
-                      {/* Account Info */}
+                      
                       <div className="ml-4 flex-1">
                         <p className="font-medium text-zinc-900 dark:text-zinc-100">{account.name}</p>
                         <p className="text-sm text-zinc-500">{account.type}</p>
                       </div>
-
-                      {/* Balance */}
+                      
                       <div className="text-right mr-4">
                         <p className="font-medium text-zinc-900 dark:text-zinc-100">{account.balance}</p>
                       </div>
-                        
-                      {/* Action Icon */}
+                      
                       <Button variant="ghost" size="icon" className="text-zinc-400">
                         <ArrowUpRight className="h-4 w-4" />
                       </Button>

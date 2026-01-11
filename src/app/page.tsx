@@ -32,13 +32,13 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* 2. KPI Cards (The Top Row) */}
+      {/* 2. KPI Cards*/}
       <div className="grid gap-4 md:grid-cols-3">
         {kpiData.map((item, i) => {
           let Icon = DollarSign;
-          let href = "/"; // Default fallback
+          let href = "/"; 
 
-          // Logic to determine Icon and Link destination
+          
           if (item.title.includes("Investments")) {
             Icon = TrendingUp;
             href = "/investments";
@@ -87,7 +87,7 @@ export default function Dashboard() {
         })}
       </div>
 
-      {/* 3. Main Content Area (Chart + Recent Transactions) */}
+      {/* 3. Main Content Area*/}
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-7">
         <Link href="/analytics" className="col-span-4 block">
           <Card className="h-full bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors">

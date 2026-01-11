@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, CreditCard as CardIcon, Calendar, Percent, ShieldCheck, Copy, Settings, ArrowUpRight, ArrowDownLeft } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
-import { CreditCard } from "@/components/CreditCard"; // Import our visual card
+import { CreditCard } from "@/components/CreditCard"; 
 import { cn } from "@/lib/utils";
 
 export default function AccountDetailPage() {
@@ -15,19 +15,19 @@ export default function AccountDetailPage() {
   
   const id = Number(params.id);
   
-  // 1. Try to find the raw card data (for the visual component)
+  
   const rawCard = myCards.find(c => c.id === id);
   const isCreditCard = !!rawCard;
   
-  // 2. Get the standardized account data (for the transactions/balance)
+  
   const account = getAccountById(id);
 
   if (!account) return <div className="p-8">Account not found</div>;
 
-  // Filter transactions for this ID
+  
   const accountTransactions = allTransactions.filter(tx => tx.accountId === id);
 
-  // --- LAYOUT 1: CREDIT CARD VIEW ---
+  
   if (isCreditCard && rawCard) {
     return (
       <div className="p-8 space-y-8 max-w-6xl mx-auto">
@@ -36,11 +36,10 @@ export default function AccountDetailPage() {
         </Button>
 
         <div className="grid gap-12 lg:grid-cols-2">
-          
-          {/* Left: The Visual Card & Actions */}
+            
           <div className="space-y-8">
             <div className="max-w-md mx-auto lg:mx-0 transform hover:scale-[1.02] transition-transform duration-500">
-               {/* Reuse the component we built earlier */}
+                
                <CreditCard {...rawCard} />
             </div>
             
@@ -48,8 +47,7 @@ export default function AccountDetailPage() {
               <Button className="w-full" size="lg">Pay Card</Button>
               <Button variant="outline" className="w-full" size="lg">Manage Lock</Button>
             </div>
-
-            {/* Credit Specific Stats */}
+            
             <div className="grid grid-cols-3 gap-4">
                <div className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-center">
                   <div className="flex justify-center mb-2"><Percent className="h-5 w-5 text-zinc-400" /></div>
@@ -68,8 +66,7 @@ export default function AccountDetailPage() {
                </div>
             </div>
           </div>
-
-          {/* Right: Transactions List */}
+          
           <div className="space-y-6">
             <h3 className="text-xl font-bold">Latest Transactions</h3>
             <Card className="bg-white dark:bg-zinc-900 border-zinc-200 dark:border-zinc-800">
@@ -102,14 +99,13 @@ export default function AccountDetailPage() {
     );
   }
 
-  // --- LAYOUT 2: BANK ACCOUNT VIEW (The original one) ---
+  
   return (
     <div className="p-8 space-y-8 max-w-5xl mx-auto">
       <Button variant="ghost" className="text-zinc-500 pl-0 gap-2" onClick={() => router.back()}>
         <ArrowLeft className="h-4 w-4" /> Back to Wallet
       </Button>
-
-      {/* Standard Header for Banks */}
+      
       <div className="flex items-start justify-between">
          <div className="flex items-center gap-4">
             <div className="h-16 w-16 rounded-full bg-white ring-1 ring-zinc-200 dark:ring-zinc-800 p-2 flex items-center justify-center overflow-hidden shadow-sm">
@@ -141,8 +137,7 @@ export default function AccountDetailPage() {
       </div>
 
       <Separator className="dark:bg-zinc-800" />
-
-      {/* Grid for Bank Details */}
+      
       <div className="grid gap-8 md:grid-cols-3">
          <div className="md:col-span-2 space-y-6">
             <Card className="bg-zinc-900 text-white border-zinc-800">

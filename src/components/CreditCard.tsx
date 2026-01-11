@@ -17,13 +17,12 @@ export function CreditCard({ bank, balance, number, expiry, color, textColor }: 
       color,
       textColor
     )}>
-      {/* Top Row: Bank Name & Contactless Icon */}
+      
       <div className="flex justify-between items-start">
         <h3 className="font-bold tracking-wider">{bank}</h3>
         <Wifi className="h-6 w-6 rotate-90 opacity-70" />
       </div>
-
-      {/* Middle: Chip */}
+      
       <div className="flex items-center gap-4">
          <div className="h-8 w-10 bg-yellow-200/80 rounded-md border border-yellow-400/50 flex items-center justify-center">
              <div className="grid grid-cols-2 gap-[2px]">
@@ -34,8 +33,7 @@ export function CreditCard({ bank, balance, number, expiry, color, textColor }: 
              </div>
          </div>
       </div>
-
-      {/* Bottom: Number & Details */}
+      
       <div>
         <div className="text-xl font-mono tracking-widest mb-4 opacity-90">
             {number}

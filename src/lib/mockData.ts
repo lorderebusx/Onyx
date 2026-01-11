@@ -1,5 +1,3 @@
-// src/lib/mockData.ts
-
 import { get } from "http";
 
 export const kpiData = [
@@ -13,7 +11,7 @@ export const kpiData = [
     title: "Monthly Spending",
     value: "$3,240.50",
     change: "-12.5%",
-    trend: "down", // Good thing (spending less)
+    trend: "down", 
   },
   {
     title: "Active Investments",
@@ -60,12 +58,12 @@ export const recentTransactions = [
 
 export const overviewChartData = [
   { name: "Jul", income: 4500, expense: 3200 },
-  { name: "Aug", income: 5200, expense: 4800 }, // High spend month
-  { name: "Sep", income: 4800, expense: 2100 }, // Saved a lot
+  { name: "Aug", income: 5200, expense: 4800 }, 
+  { name: "Sep", income: 4800, expense: 2100 }, 
   { name: "Oct", income: 6100, expense: 3500 },
-  { name: "Nov", income: 5900, expense: 5200 }, // Christmas shopping start?
-  { name: "Dec", income: 7200, expense: 6500 }, // Holiday spending
-  { name: "Jan", income: 4200, expense: 1200 }, // Fresh start
+  { name: "Nov", income: 5900, expense: 5200 }, 
+  { name: "Dec", income: 7200, expense: 6500 }, 
+  { name: "Jan", income: 4200, expense: 1200 }, 
 ];
 
 const getLogo = (domain: string) => 
@@ -74,10 +72,10 @@ const getLogo = (domain: string) =>
 export const myCards = [
   {
     id: 10,
-    bank: "American Express",
+    bank: "Amex Platinum",
     network: "Amex",
     balance: "$4,253.68",
-    number: "**** ****** 84005", // Amex has 15 digits usually
+    number: "**** ****** 84005", 
     expiry: "12/28",
     logoUrl: "/american-express.png",
     color: "from-zinc-300 via-zinc-400 to-zinc-500 border-zinc-400", 
@@ -107,7 +105,7 @@ export const myCards = [
   },
   {
     id: 13,
-    bank: "American Express",
+    bank: "Amex Gold",
     network: "Amex",
     balance: "$850.00",
     number: "**** ****** 71002",
@@ -166,20 +164,20 @@ export const bankAccounts = [
 ];
 
 export function getAccountById(id: number) {
-  // First, try to find it in bank accounts
+  
   const bank = bankAccounts.find(acc => acc.id === id);
   if (bank) return bank;
 
-  // If not found, try to find it in credit cards
-  // We adapt the card data structure to match the "Account" shape expected by the page
+  
+  
   const card = myCards.find(c => c.id === id);
   if (card) {
     return {
       id: card.id,
-      name: card.bank,         // Map 'bank' to 'name'
-      type: `${card.network} Credit`, // Create a type string
+      name: card.bank,         
+      type: `${card.network} Credit`, 
       balance: card.balance,
-      logoUrl: card.logoUrl,     // Use the card image as the "logo"
+      logoUrl: card.logoUrl,     
       accountNumber: card.number,
       routing: "N/A",
       status: "Active"
@@ -462,45 +460,43 @@ export const crypto = [
   }
 ];
 
-// src/lib/mockData.ts
-
 export const portfolioHistory = [
-  { month: "Jul", value: 54000 },
-  { month: "Aug", value: 58500 },
-  { month: "Sep", value: 57200 }, // slight dip
-  { month: "Oct", value: 62400 },
-  { month: "Nov", value: 68900 },
-  { month: "Dec", value: 70472 },
+  { month: "Jul", value: 1317880.62 },
+  { month: "Aug", value: 1427650.45 },
+  { month: "Sep", value: 1395922.40 }, 
+  { month: "Oct", value: 1482301.75 },
+  { month: "Nov", value: 1385512.36 }, 
+  { month: "Dec", value: 1601479.00 }, 
 ];
 
 export const cryptoHistory = [
-  { month: "Jul", value: 14000 },
-  { month: "Aug", value: 12500 }, // dip
-  { month: "Sep", value: 16800 }, // pump
-  { month: "Oct", value: 15200 },
-  { month: "Nov", value: 18400 },
-  { month: "Dec", value: 20812 },
+  { month: "Jul", value: 180884.32 },
+  { month: "Aug", value: 167163.85 }, 
+  { month: "Sep", value: 195287.01 },
+  { month: "Oct", value: 215555.30 }, 
+  { month: "Nov", value: 167497.4 }, 
+  { month: "Dec", value: 271947 }, 
 ];
 
 export const yearlyAnalytics = [
-  { month: "Jan", income: 4500, expense: 3200 },
-  { month: "Feb", income: 5200, expense: 4800 },
-  { month: "Mar", income: 4800, expense: 4100 },
-  { month: "Apr", income: 6100, expense: 3500 },
-  { month: "May", income: 5900, expense: 5200 },
-  { month: "Jun", income: 7200, expense: 4500 },
-  { month: "Jul", income: 6800, expense: 3800 },
-  { month: "Aug", income: 7400, expense: 5100 },
-  { month: "Sep", income: 7100, expense: 4200 },
-  { month: "Oct", income: 8200, expense: 4800 },
-  { month: "Nov", income: 7900, expense: 5600 },
-  { month: "Dec", income: 9200, expense: 6100 },
+  { month: "Jan", income: 52450, expense: 12500 },
+  { month: "Feb", income: 52450, expense: 14200 },
+  { month: "Mar", income: 52450, expense: 11800 },
+  { month: "Apr", income: 65000, expense: 18000 }, 
+  { month: "May", income: 52450, expense: 13500 },
+  { month: "Jun", income: 52450, expense: 12100 },
+  { month: "Jul", income: 52450, expense: 15200 },
+  { month: "Aug", income: 52450, expense: 19500 },
+  { month: "Sep", income: 52450, expense: 13200 },
+  { month: "Oct", income: 68000, expense: 14100 }, 
+  { month: "Nov", income: 52450, expense: 21000 },
+  { month: "Dec", income: 85000, expense: 25000 }, 
 ];
 
 export const categoryBreakdown = [
-  { name: "Housing", value: 1800, color: "#3b82f6" }, // Blue
-  { name: "Food", value: 650, color: "#10b981" },    // Emerald
-  { name: "Transport", value: 450, color: "#f59e0b" }, // Amber
-  { name: "Utilities", value: 250, color: "#6366f1" }, // Indigo
-  { name: "Entertainment", value: 350, color: "#ec4899" }, // Pink
+  { name: "Housing", value: 5800, color: "#3b82f6" },     
+  { name: "Travel", value: 3400, color: "#f59e0b" },      
+  { name: "Food", value: 2100, color: "#10b981" },        
+  { name: "Shopping", value: 4500, color: "#00ffe1" },    
+  { name: "Utilities", value: 850, color: "#ff0000" },    
 ];
