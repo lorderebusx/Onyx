@@ -4,8 +4,8 @@ import { get } from "http";
 
 export const kpiData = [
   {
-    title: "Total Net Worth",
-    value: "$142,384.00",
+    title: "Total Liquid Net Worth",
+    value: "$721,404.29",
     change: "+2.4%",
     trend: "up", 
   },
@@ -17,7 +17,7 @@ export const kpiData = [
   },
   {
     title: "Active Investments",
-    value: "$84,210.20",
+    value: "$1,601,479.74",
     change: "+5.2%",
     trend: "up",
   },
@@ -327,68 +327,137 @@ export const allTransactions = [
 export const investments = [
   {
     id: 1,
-    name: "Apple Inc.",
-    ticker: "AAPL",
-    price: "$185.92",
-    change: "+1.2%",
-    holdings: "45.0",
-    value: "$8,366.40",
-    logo: getLogo("apple.com"),
-    trend: "up"
-  },
-  {
-    id: 2,
-    name: "Bitcoin",
-    ticker: "BTC",
-    price: "$46,250.00",
-    change: "-2.4%",
-    holdings: "0.45",
-    value: "$20,812.50",
-    logo: getLogo("bitcoin.org"),
+    name: "NVIDIA Corp",
+    ticker: "NVDA",
+    price: "$184.82",
+    change: "-0.095%",
+    holdings: "1,900.0",
+    value: "$351,158.00",
+    logo: getLogo("nvidia.com"),
     trend: "down"
   },
   {
+    id: 2,
+    name: "Microsoft Corp",
+    ticker: "MSFT",
+    price: "$479.28",
+    change: "+0.24%",
+    holdings: "270.0",
+    value: "$129,405.60",
+    logo: getLogo("microsoft.com"),
+    trend: "up"
+  },
+  {
     id: 3,
-    name: "NVIDIA Corp",
-    ticker: "NVDA",
-    price: "$540.20",
-    change: "+4.5%",
-    holdings: "12.0",
-    value: "$6,482.40",
-    logo: getLogo("nvidia.com"),
+    name: "Amazon.com Inc",
+    ticker: "AMZN",
+    price: "$247.34",
+    change: "+0.41%",
+    holdings: "405.00",
+    value: "$100,172.70",
+    logo: getLogo("amazon.com"),
     trend: "up"
   },
   {
     id: 4,
-    name: "Ethereum",
-    ticker: "ETH",
-    price: "$2,450.00",
-    change: "+0.8%",
-    holdings: "5.5",
-    value: "$13,475.00",
-    logo: getLogo("ethereum.org"),
+    name: "Dodge & Cox's Stock Fund",
+    ticker: "DODGX",
+    price: "$17.01",
+    change: "+0.12%",
+    holdings: "9,900.0",
+    value: "$168,399.00",
+    logo: getLogo("dodgeandcox.com"),
     trend: "up"
   },
   {
     id: 5,
-    name: "Tesla, Inc.",
-    ticker: "TSLA",
-    price: "$235.40",
-    change: "-1.1%",
-    holdings: "20.0",
-    value: "$4,708.00",
-    logo: getLogo("tesla.com"),
-    trend: "down"
+    name: "Vanguard S&P 500 ETF",
+    ticker: "VOO",
+    price: "$638.31",
+    change: "+0.67%",
+    holdings: "300.0",
+    value: "$191,493.00",
+    logo: getLogo("vanguard.com"),
+    trend: "up"
   },
   {
     id: 6,
-    name: "Vanguard S&P 500",
-    ticker: "VOO",
-    price: "$475.10",
-    change: "+0.2%",
-    holdings: "35.0",
-    value: "$16,628.50",
-    logo: getLogo("vanguard.com"),
+    name: "JPMorgan Equity Premium Income ETF",
+    ticker: "JEPI",
+    price: "$58.25",
+    change: "+0.36%",
+    holdings: "775.0",
+    value: "$45,143.75",
+    logo: getLogo("jpmorgan.com"),
+    trend: "up"
+  },
+  {
+    id: 7,
+    name: "VanEck Semiconductor ETF",
+    ticker: "SMH",
+    price: "$389.34",
+    change: "+2.75%",
+    holdings: "280",
+    value: "$109,015.20",
+    logo: getLogo("vaneck.com"),
+    trend: "up"
+  },
+  {
+    id: 8,
+    name: "Goldman Sachs Group Inc",
+    ticker: "GS",
+    price: "$938.98",
+    change: "+0.44%",
+    holdings: "250.0",
+    value: "$234,745.00",
+    logo: getLogo("goldmansachs.com"),
+    trend: "up"
+  }
+];
+
+export const crypto = [
+  {
+    id: 1,
+    name: "Bitcoin",
+    ticker: "BTC",
+    price: "$90,472.52",
+    change: "+0.03%",
+    holdings: "2.0",
+    value: "$180,945.04",
+    logo: getLogo("bitcoin.org"),
+    trend: "up"
+  },
+  {
+    id: 2,
+    name: "Ethereum",
+    ticker: "ETH",
+    price: "$3105.83",
+    change: "+0.76%",
+    holdings: "15.0",
+    value: "$46,587.45",
+    logo: getLogo("ethereum.org"),
+    trend: "up"
+  },
+  {
+    id: 3,
+    name: "Solana",
+    ticker: "SOL",
+    price: "$137.66",
+    change: "+1.42%",
+    holdings: "250.00",
+    value: "$34,415.00",
+    logo: getLogo("solana.com"),
+    trend: "up"
+  },
+  {
+    id: 4,
+    name: "USDC Stablecoin",
+    ticker: "USDC",
+    price: "$1.00",
+    change: "+0.00%",
+    holdings: "10,000.0",
+    value: "$10,000.00",
+    logo: getLogo("usdc.com"),
     trend: "up"
   }
 ];

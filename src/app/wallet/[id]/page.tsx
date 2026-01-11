@@ -123,7 +123,7 @@ export default function AccountDetailPage() {
                 />
             </div>
             <div>
-                <h1 className="text-3xl font-bold text-zinc-900 dark:text-white">{account.name}</h1>
+                <h2 className="text-3xl font-bold text-zinc-900 dark:text-white">{account.name}</h2>
                 <div className="flex items-center gap-2 text-zinc-500 mt-1">
                     <span className="text-sm">{account.type}</span>
                     <span>•</span>
